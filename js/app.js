@@ -7,23 +7,14 @@
 // 🙀Bonus Feature
 // Display a fake temperature (i.e 17) in Celsius and add a link to convert it to Fahrenheit. When clicking on it, it should convert the temperature to Fahrenheit. When clicking on Celsius, it should convert it back to Celsius.
 
-let currentTime = new Date();
-
-let time = currentTime.toLocaleTimeString('en-US'); 
 
 // use dom innerhtml to update the date and time upon loading 
+let now = new Date();
+let time = now.toLocaleTimeString("en-US"); 
 
-let updateTime= document.querySelector("#time-info");
-
-function updateDateInfo(event){
-event.preventDefault();
-updateTime.addEventListener("load", updateDateInfo);
-updateTime.innerHTML="currentTime.time";
-}
-
-
-
-function formatDate(date) {
+let day = now.getDay();
+function updateDateInfo(date){
+ 
   let days = [
     "Sunday",
     "Monday",
@@ -33,10 +24,16 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
+
   let currentDay = days[date.getDay()];
-  let formattedDate= `${currentDay}  ${time}`;
+  let formattedDate = `${currentDay}  ${time}`;
+     return formattedDate;
+   }
 
-  return formattedDate;
-}
+   console.log(updateDateInfo(now));
 
-console.log(formatDate(currentTime));
+let updateTime = document.querySelector("#time-info");
+updateTime.addEventListener("load", updateDateInfo);
+updateTime.innerHTML = `${day} ${time}`; 
+
+// function for city update
