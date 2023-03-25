@@ -9,7 +9,17 @@
 
 let currentTime = new Date();
 
-let time = currentTime.toLocaleTimeString("en-US"); 
+let time = currentTime.toLocaleTimeString('en-US'); 
+
+// use dom innerhtml to update the date and time upon loading 
+
+let updateTime= document.querySelector("#time-info");
+
+function updateDateInfo(event){
+event.preventDefault();
+updateTime.addEventListener("load", updateDateInfo);
+updateTime.innerHTML="currentTime.time";
+}
 
 
 
@@ -24,7 +34,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let currentDay = days[date.getDay()];
-  let formattedDate= `Today is ${currentDay}  ${time}`;
+  let formattedDate= `${currentDay}  ${time}`;
 
   return formattedDate;
 }
