@@ -9,7 +9,8 @@
 
 let currentTime = new Date();
 
-let time = currentTime.getHours() + ":" + currentTime.getMinutes(); 
+let time = currentTime.toLocaleTimeString("en-US"); 
+
 
 
 function formatDate(date) {
