@@ -9,6 +9,7 @@
 
 let currentTime = new Date();
 
+let time = currentTime.getHours() + ":" + currentTime.getMinutes(); 
 
 
 function formatDate(date) {
@@ -22,7 +23,7 @@ function formatDate(date) {
     "Saturday",
   ];
   let currentDay = days[date.getDay()];
-  let formattedDate = `Today is ${currentDay},  ${currentTime.getMilliseconds}`;
+  let formattedDate= `Today is ${currentDay}  ${time}`;
 
   return formattedDate;
 }
