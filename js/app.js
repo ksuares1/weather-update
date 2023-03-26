@@ -32,4 +32,15 @@ let updateTime = document.querySelector("#time-info");
 updateTime.addEventListener("load", updateDateInfo);
 updateTime.innerHTML = `${day} ${time}`; 
 
+
+
 // function for city update
+
+function cityUpdate(){
+
+}
+
+let input = document.querySelector(".form-control-text");
+let cityChange=document.querySelector("#city");
+input.addEventListener("submit", cityUpdate);
+cityChange.innerHTML = `${input} `;
