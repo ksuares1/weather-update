@@ -36,11 +36,15 @@ updateTime.innerHTML = `${day} ${time}`;
 
 // function for city update
 
-function cityUpdate(){
+function search(event){
+  event.preventDefault();
+let city = document.querySelector(".city");
 
+let cityInput = document.querySelector("#city-input");
+city.innerHTML = cityInput.value ;
 }
+ 
 
-let input = document.querySelector(".form-control-text");
-let cityChange=document.querySelector("#city");
-input.addEventListener("submit", cityUpdate);
-cityChange.innerHTML = `${input} `;
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", search);
+
