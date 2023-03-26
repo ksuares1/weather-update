@@ -12,9 +12,6 @@
 let now = new Date();
 let time = now.toLocaleTimeString("en-US"); 
 
-let day = now.getDay();
-function updateDateInfo(date){
- 
   let days = [
     "Sunday",
     "Monday",
@@ -24,13 +21,12 @@ function updateDateInfo(date){
     "Friday",
     "Saturday",
   ];
+let day = days[now.getDay()];
 
-  let currentDay = days[date.getDay()];
-  let formattedDate = `${currentDay}  ${time}`;
-     return formattedDate;
+function updateDateInfo(){
+
    }
 
-   console.log(updateDateInfo(now));
 
 let updateTime = document.querySelector("#time-info");
 updateTime.addEventListener("load", updateDateInfo);
