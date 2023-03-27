@@ -45,6 +45,6 @@ city.innerHTML = cityInput.value ;
 }
  
 
-let searchForm = document.querySelector("#search-form");
+let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", search);
 
